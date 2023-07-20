@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script&family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  position: relative;
+  background: #232323;
+  color: #232323;
+}
+
+#box {
+  position: relative;
+  min-height: calc(100vh - 20px);
+  width: calc(100% - 20px);
+  /* background-color: red; */
+  margin: 10px;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, 300px);
+}
+
+#box li {
+  max-height: 330px;
+  border-radius: 5px;
+  list-style: none;
+  background-color: #fff;
+  padding: 10px;
+}
+
+#add-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+#add-box p {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+#icon {
+  /* background-color: red; */
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: 3px dashed #232323;
+}
+
+#box .note {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.note .detail {
+  position: relative;
+}
+
+.note .detail p {
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 5px;
+  margin: 5px 0 3px;
+}
+
+.note .detail #content {
+  min-height: 230px;
+  max-height: 230px;
+  position: relative;
+  overflow-y: auto;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.bottom-content {
+  position: relative;
+  width: calc(100% - 10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  /* background-color: chocolate; */
+}
+
+#setting {
+  position: relative;
+}
+
+.bottom-content #setting {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#setting #menu {
+  position: absolute;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+  font-size: 16px;
+  border-radius: 4px;
+  bottom: 10px;
+  right: -5px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+}
+
+#setting.show #menu {
+  transform: scale(1);
+}
+
+#setting #menu li {
+  height: 40px;
+  width: 100px;
+  border-radius: 0;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#setting #menu li:hover {
+  background-color: aqua;
+}
+
+#setting #menu li i {
+  padding-right: 6px;
+}
+
+#popup-box {
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: 400px;
+  width: 100%;
+}
+
+#popup #details {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#details header {
+  padding: 10px 25px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#details header p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#details header i {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#details form {
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#row-title,
+#row-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#row-title input,
+#row-details textarea {
+  margin: 5px 0px;
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  padding: 5px 10px;
+  border: 1px solid #999;
+}
+
+textarea {
+  height: 200px;
+  resize: none;
+}
+
+form button {
+  margin: 15px 0px;
+  width: 100%;
+  padding: 8px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: blueviolet;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#popup-box,#popup-box
+#popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+#popup-box.show,#popup-box.show
+#popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
